@@ -1,5 +1,3 @@
-
-
 def convertString(string): 
     res = ''
     index = 1

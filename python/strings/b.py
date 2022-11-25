@@ -1,5 +1,3 @@
-
-
 def printString(word):
     for char in word:
         print(char)

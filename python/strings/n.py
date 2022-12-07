@@ -1,4 +1,4 @@
-def quick_sort_words(list):
+def quick_sort_words(list): # recursive sort 
     if len(list) <= 1:
         return list 
 
@@ -19,6 +19,7 @@ def main(string):
     words = string.split(' ')
     for word in quick_sort_words(words):
         print(word) 
+# RUNNING CODe
 
 n = int(input())
 s = input()

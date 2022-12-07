@@ -10,7 +10,6 @@ def normalizeConsonats(string):
             vocals += char 
         else:
             consonants += char 
-    # if 
     return print(vocals + ' ' + consonants)
     
 

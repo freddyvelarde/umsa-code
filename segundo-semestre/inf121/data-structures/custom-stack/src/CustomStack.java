@@ -1,6 +1,6 @@
 public class CustomStack<T> {
-  private int stackSize = 0;
-  private int capacity = 10;
+  private int stackSize;
+  private int capacity;
   private Object[] stack;
 
   public CustomStack(int stackCapacity) {

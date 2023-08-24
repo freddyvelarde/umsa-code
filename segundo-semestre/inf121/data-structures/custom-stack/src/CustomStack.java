@@ -42,7 +42,7 @@ public class CustomStack<T> {
     if (this.isEmpty())
       return lastElement;
     lastElement = (T)this.stack[this.stackSize - 1];
-    this.stack[this.capacity - 1] = 0;
+    this.stack[this.capacity - 1] = null;
     this.stackSize--;
     return lastElement;
   }

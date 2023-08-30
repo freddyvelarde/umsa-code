@@ -9,6 +9,7 @@ class Main {
     array.push(5);
     array.push(6);
     array.push(7);
+    array.push(8);
 
     array.print();
   }

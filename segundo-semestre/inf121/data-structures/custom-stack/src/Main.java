@@ -1,12 +1,9 @@
 public class Main {
   public static void main(String[] args) {
-    Stack<String> vowels = new Stack<>(4);
+    Stack<Integer> myStack = new Stack<>(5);
 
-    vowels.push("Freddy");
-    vowels.push("Erick");
-    vowels.push("Velarde");
-    vowels.push("Silva");
-
-    System.out.println(vowels.get(4));
+    myStack.push(1);
+    
+    myStack.print();
   }
 }

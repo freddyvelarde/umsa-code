@@ -18,8 +18,8 @@ public class Main {
     /* libros.mostrar(); */
 
     //
-    /* ClientesConMasPedidos(clientes, pedidos); */
-    /* montoTotalPorCliente(clientes, pedidos, libros); */
+    ClientesConMasPedidos(clientes, pedidos);
+    montoTotalPorCliente(clientes, pedidos, libros);
     mostrarClienteQueCompraronEnFecha(pedidos, clientes);
   }
 
@@ -137,10 +137,9 @@ public class Main {
       /* System.out.println("<<-------------->>"); */
       /* System.out.println(pedido.getCodCli() + " " + codCli); */
       /* System.out.println("<<-------------->>"); */
-      if (pedido.getCodCli().equals(codCli)) {
-        System.out.println(pedido.getCodCli() + " << ---- >> " + codCli);
+      if (pedido.getCodCli().equals(codCli))
         counter++;
-      }
+
       swap.adi(pedido);
     }
     pedidos.vaciar(swap);

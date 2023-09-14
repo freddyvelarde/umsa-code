@@ -11,10 +11,55 @@ public class Main {
     /* pedidos.mostrar(); */
 
     /* // Libros */
-    /* ColaSimpleLibro libros = new ColaSimpleLibro(); */
-    /* libros.llenar(4); */
+    ColaSimpleLibro libros = new ColaSimpleLibro();
+    libros.llenar(4);
     /* libros.mostrar(); */
-    ClientesConMasPedidos(clientes, pedidos);
+    /* ClientesConMasPedidos(clientes, pedidos); */
+    montoTotalPorCliente(clientes, pedidos, libros);
+  }
+
+  static void montoTotalPorCliente(ColaSimpleCli clientes,
+                                   ColaSimplePed pedidos,
+                                   ColaSimpleLibro libros) {
+    ColaSimpleCli swap = new ColaSimpleCli();
+    while (!clientes.esVacia()) {
+      Cliente cliente = clientes.eli();
+      int total = 0;
+
+      ColaSimplePed swapPedidos = new ColaSimplePed();
+      while (!pedidos.esVacia()) {
+        Pedidos pedido = pedidos.eli();
+        if (cliente.getCodigoCliente().equals(pedido.getCodCli())) {
+          int cant = pedido.getCantidad();
+          String codLib = pedido.getCodLib();
+          int precio = precioLibCod(libros, codLib);
+          total = total + (cant * precio);
+        }
+        swapPedidos.adi(pedido);
+      }
+      pedidos.vaciar(swapPedidos);
+      System.out.println("Nombre cliente: " + cliente.getNombre());
+      System.out.println("Monto total: " + total);
+
+      swap.adi(cliente);
+    }
+
+    clientes.vaciar(swap);
+  }
+
+  static int precioLibCod(ColaSimpleLibro libros, String codLib) {
+    ColaSimpleLibro swap = new ColaSimpleLibro();
+    int precio = 0;
+    while (!libros.esVacia()) {
+      Libro x = libros.eli();
+      if (x.getCodLib().equals(codLib)) {
+        precio = x.getPrecio();
+      }
+
+      swap.adi(x);
+    }
+    libros.vaciar(swap);
+    return precio;
   }
 
   static void ClientesConMasPedidos(ColaSimpleCli clientes,

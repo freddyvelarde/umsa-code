@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
   public static void main(String[] args) {
     /* // Clientes */
@@ -14,8 +16,11 @@ public class Main {
     ColaSimpleLibro libros = new ColaSimpleLibro();
     libros.llenar(4);
     /* libros.mostrar(); */
+
+    //
     /* ClientesConMasPedidos(clientes, pedidos); */
-    montoTotalPorCliente(clientes, pedidos, libros);
+    /* montoTotalPorCliente(clientes, pedidos, libros); */
+    mostrarClienteQueCompraronEnFecha(pedidos, clientes);
   }
 
   static void montoTotalPorCliente(ColaSimpleCli clientes,
@@ -45,6 +50,40 @@ public class Main {
     }
 
     clientes.vaciar(swap);
+  }
+
+  static void mostrarClienteQueCompraronEnFecha(ColaSimplePed pedidos,
+                                                ColaSimpleCli clientes) {
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("Ingrese la fecha: ");
+    String fecha = scanner.next();
+
+    ColaSimplePed swapPedidos = new ColaSimplePed();
+    while (!pedidos.esVacia()) {
+      Pedidos pedido = pedidos.eli();
+      String codCliente = "";
+
+      if (pedido.getFecha().equals(fecha)) {
+        codCliente = pedido.getCodCli();
+      }
+
+      ColaSimpleCli swapClientes = new ColaSimpleCli();
+      while (!clientes.esVacia()) {
+        Cliente x = clientes.eli();
+
+        if (x.getCodigoCliente().equals(codCliente)) {
+          System.out.println("El siguiente Cliente hizo un pedido en fecha: " +
+                             fecha);
+          x.mostrar();
+        }
+
+        swapClientes.adi(x);
+      }
+      clientes.vaciar(swapClientes);
+
+      swapPedidos.adi(pedido);
+    }
+    pedidos.vaciar(swapPedidos);
   }
 
   static int precioLibCod(ColaSimpleLibro libros, String codLib) {

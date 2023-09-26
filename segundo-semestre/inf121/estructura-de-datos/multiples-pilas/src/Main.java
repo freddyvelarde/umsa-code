@@ -4,5 +4,6 @@ class Main {
 
     multiPila.llenar(2);
     multiPila.mostrar();
+    System.out.println("N: " + multiPila.getN());
   }
 }

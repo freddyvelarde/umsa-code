@@ -47,13 +47,11 @@ class Main {
           aux.adi(x);
         }
       }
-      /* while() */
       aux.mostrar();
 
       while (!aux.esVacia()) {
         chars.adicionar(i, aux.eli());
       }
-      /* ColaSimpleCar aux = new ColaSimpleCar(); */
     }
   }
 }

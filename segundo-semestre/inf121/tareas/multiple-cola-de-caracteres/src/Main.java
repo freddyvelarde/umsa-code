@@ -35,6 +35,9 @@ class Main {
     reverseCharStack(c, 1);
 
     c.mostrar();
+
+    System.out.println("Nombre: Velarde Silva Freddy Erick");
+    System.out.println("CI: 13827575 LP");
   }
 
   static void reverseCharStack(Mp_ColaSimCar chars, int indexTarget) {

@@ -12,6 +12,9 @@ class Main {
     l.adi(l4);
 
     showExpensiceBook(l);
+
+    System.out.println("Nombre: Velarde Silva Freddy Erick");
+    System.out.println("CI: 13827575 LP");
   }
 
   static void showExpensiceBook(ColaSimpleLibros libros) {

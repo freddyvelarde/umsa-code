@@ -20,9 +20,13 @@ public class Mp_PilaE {
 
   // Adicionar un element (De tipe Estudiante) en la pila en la posicion "i"
   void adicionar(int i, Estudiante e) {
-    if (!c[i].esLlena())
+    if (!c[i].esLlena()) {
       c[i].adi(e);
-    else
+      if (i > n) {
+        n = (i + 1);
+      }
+
+    } else
       System.out.print("pila " + i + " esta llena");
   }
 

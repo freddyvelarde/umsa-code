@@ -19,10 +19,22 @@ public class Mp_PilaE {
   boolean esLlena(int i) { return c[i].esLlena(); }
 
   // Adicionar un element (De tipe Estudiante) en la pila en la posicion "i"
-  void adicionar(int i, Estudiante e) { c[i].adi(e); }
+  void adicionar(int i, Estudiante e) {
+    if (!c[i].esLlena())
+      c[i].adi(e);
+    else
+      System.out.print("pila " + i + " esta llena");
+  }
 
   // Eliminar el elemento (De tipe Estudiante) en la pila con posicion "i"
-  Estudiante eliminar(int i) { return c[i].eli(); }
+  Estudiante eliminar(int i) {
+    Estudiante e = new Estudiante("", 0);
+    if (!c[i].esVacia())
+      e = c[i].eli();
+    else
+      System.out.print("pila " + i + " esta vacia");
+    return e;
+  }
 
   // llenar de "n" numeros de Pilas
   void llenar(int n) {

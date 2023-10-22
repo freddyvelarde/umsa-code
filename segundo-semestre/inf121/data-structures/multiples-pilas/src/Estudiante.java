@@ -1,33 +1,23 @@
-import java.util.Scanner;
-
 public class Estudiante {
   private String nom;
-  private String carrera;
+  private double nota;
 
-  /* public Estudiante(String nom, String carrera, double nota) { */
-  /*   this.nom = nom; */
-  /*   this.carrera = carrera; */
-  /*   this.nota = nota; */
-  /* } */
+  public Estudiante(String nom, double nota) {
+    this.nom = nom;
+    this.nota = nota;
+  }
 
   public String getNom() { return nom; }
 
   public void setNom(String nom) { this.nom = nom; }
 
-  public String getCarrera() { return carrera; }
+  public double getNota() { return nota; }
 
-  public void setCarrera(String carrera) { this.carrera = carrera; }
-
-  public void leer() {
-    Scanner lee = new Scanner(System.in);
-    System.out.println("Ingresa: nombre, carrera \n");
-    this.nom = lee.next();
-    this.carrera = lee.next();
-  }
+  public void setNota(double nota) { this.nota = nota; }
 
   @Override
   public String toString() {
-    return "Estudiante [nom=" + nom + ", carrera=" + carrera + "]";
+    return "Estudiante [nom=" + nom + ", nota=" + nota + "]";
   }
 
   public void mostrar() { System.out.println(toString()); }

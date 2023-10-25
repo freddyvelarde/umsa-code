@@ -10,10 +10,10 @@ public class Principal {
     Persona z5 = new Persona("marcelo", 25);
     Persona z6 = new Persona("wilson", 19);
 
-    firstLinkedList.adiFinal(z1);
-    firstLinkedList.adiFinal(z2);
-    firstLinkedList.adiFinal(z3);
     firstLinkedList.adiFinal(z4);
+    firstLinkedList.adiFinal(z3);
+    firstLinkedList.adiFinal(z2);
+    firstLinkedList.adiFinal(z1);
 
     LS_NormalPer secondLinkedList = new LS_NormalPer();
 
@@ -28,9 +28,12 @@ public class Principal {
     /* printIntersectionOfLists(firstLinkedList, secondLinkedList); */
 
     // e)
-    /* int index = 3; */
-    /* System.out.println("Encuentra a la persona con index: " + index); */
-    /* findNodeByIndex(firstLinkedList, index); // index 3 = alan */
+    int index = 3;
+    System.out.println("Encuentra a la persona con index: " + index);
+    findNodeByIndex(firstLinkedList, index); // index 3 = alan
+    index = 6;
+    System.out.println("Encuentra a la persona con index: " + index);
+    findNodeByIndex(firstLinkedList, index); // index 3 = alan
   }
 
   static void printIntersectionOfLists(LS_NormalPer l1, LS_NormalPer l2) {

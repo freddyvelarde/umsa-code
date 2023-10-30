@@ -1,17 +1,17 @@
+
 public class NodoPer {
-  private Persona value;
-  private NodoPer next;
+  private Persona q;   // define el dato objeto persona
+  private NodoPer sig; // definiendo el campo enlace sig
 
-  public NodoPer() { next = null; }
-
-  public NodoPer(Persona newValue) {
-    this.next = null;
-    this.value = newValue;
+  public NodoPer() { // constructor
+    sig = null;
   }
 
-  public Persona getValue() { return value; }
-  public void setValue(Persona newValue) { this.value = newValue; }
+  public Persona getQ() { return q; }
 
-  public NodoPer getNext() { return next; }
-  public void setNext(NodoPer nextNode) { this.next = nextNode; }
+  public void setQ(Persona q) { this.q = q; }
+
+  public NodoPer getSig() { return sig; }
+
+  public void setSig(NodoPer sig) { this.sig = sig; }
 }

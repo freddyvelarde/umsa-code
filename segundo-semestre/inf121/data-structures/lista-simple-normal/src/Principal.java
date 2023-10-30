@@ -15,25 +15,32 @@ public class Principal {
     firstLinkedList.adiFinal(z2);
     firstLinkedList.adiFinal(z1);
 
-    LS_NormalPer secondLinkedList = new LS_NormalPer();
+    firstLinkedList.eliFinal();
+    firstLinkedList.eliFinal();
+    firstLinkedList.eliFinal();
+    firstLinkedList.eliFinal();
 
-    secondLinkedList.adiFinal(z6);
-    secondLinkedList.adiFinal(z5);
-    secondLinkedList.adiFinal(z3);
-    secondLinkedList.adiFinal(z2);
-    secondLinkedList.adiFinal(z1);
+    firstLinkedList.mostrar();
+
+    /* LS_NormalPer secondLinkedList = new LS_NormalPer(); */
+
+    /* secondLinkedList.adiFinal(z6); */
+    /* secondLinkedList.adiFinal(z5); */
+    /* secondLinkedList.adiFinal(z3); */
+    /* secondLinkedList.adiFinal(z2); */
+    /* secondLinkedList.adiFinal(z1); */
 
     // d)
     /* System.out.println("Personas que se repiten en ambas listas: "); */
     /* printIntersectionOfLists(firstLinkedList, secondLinkedList); */
 
     // e)
-    int index = 3;
-    System.out.println("Encuentra a la persona con index: " + index);
-    findNodeByIndex(firstLinkedList, index); // index 3 = alan
-    index = 6;
-    System.out.println("Encuentra a la persona con index: " + index);
-    findNodeByIndex(firstLinkedList, index); // index 3 = alan
+    /* int index = 3; */
+    /* System.out.println("Encuentra a la persona con index: " + index); */
+    /* findNodeByIndex(firstLinkedList, index); // index 3 = alan */
+    /* index = 6; */
+    /* System.out.println("Encuentra a la persona con index: " + index); */
+    /* findNodeByIndex(firstLinkedList, index); // index 3 = alan */
   }
 
   static void printIntersectionOfLists(LS_NormalPer l1, LS_NormalPer l2) {

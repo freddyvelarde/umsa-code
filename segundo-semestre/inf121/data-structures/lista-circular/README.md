@@ -28,11 +28,16 @@ public class Principal {
 output:
 
 > Agregar 5 personas:
-> ![Imgur](https://i.imgur.com/7vOLZSU.png)
+
+![Imgur](https://i.imgur.com/7vOLZSU.png)
+
 > Eliminar el primer elemento:
-> ![Imgur](https://i.imgur.com/JMhG4yS.png)
+
+![Imgur](https://i.imgur.com/JMhG4yS.png)
+
 > Agregar a Marcelo:
-> ![Imgur](https://i.imgur.com/e7ggSgq.png)
+
+![Imgur](https://i.imgur.com/e7ggSgq.png)
 
 source code:
 `NodoP`.java:

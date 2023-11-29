@@ -1,4 +1,3 @@
-
 public class LS_NormalPer extends ListaSimplePer {
 
   public LS_NormalPer() { super(); }

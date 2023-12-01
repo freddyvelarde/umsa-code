@@ -9,10 +9,10 @@ public class Main {
     p.adi(6);
 
     // recorrido recursivo
-    // procesoRec(p);
+    procesoRec(p);
 
     // suma de los numeros de la pila recursiva
-    // System.out.println(suma(p));
+    System.out.println(suma(p));
 
     // contar los numeros multiplos del numero "x"
     System.out.println(contarMulti(p, 2));

@@ -7,9 +7,9 @@ public class Main {
     c.adi(new Persona("eric", 13));
     c.adi(new Persona("fernanda", 31));
 
-    /* mostrar(c); */
+    mostrar(c);
 
-    /* System.out.println(mayorEdad(c)); */
+    System.out.println(mayorEdad(c));
   }
 
   static int mayorEdad(ColaSimplePer W) {

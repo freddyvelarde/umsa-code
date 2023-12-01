@@ -6,11 +6,11 @@ public class Main {
     n.adiFinal(3);
     n.adiFinal(4);
 
-    /* procesoRec(n.getP()); */
+    procesoRec(n.getP());
 
-    /* System.out.println(suma(n.getP())); */
+    System.out.println(suma(n.getP()));
 
-    /* mostrar(n.getP()); */
+    mostrar(n.getP());
 
     System.out.println(buscar(n.getP(), 2));
   }

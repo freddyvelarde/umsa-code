@@ -1,0 +1,63 @@
+package pasajeros;
+import java.util.Scanner;
+
+public class PilaP extends VectorP {
+  private Pasajero tope;
+
+  public PilaP() { this.tope = -1; }
+  public boolean esVacia() {
+    if (this.tope == -1)
+      return true;
+    return false;
+  }
+  public boolean esLlena() {
+    if (this.tope == this.max - 1)
+      return true;
+    return false;
+  }
+  public void adi(Pasajero elem) {
+    if (this.esLlena())
+      System.out.println("PilaP llena!!!");
+    else {
+      this.tope++;
+      this.v[this.tope] = elem;
+    }
+  }
+  public Pasajero eli() {
+    Pasajero elem = Pasajero(0, "", 0);
+    if (this.esVacia())
+      System.out.println("PilaP Vacia!!");
+    else {
+      elem = this.v[this.tope];
+      this.tope--;
+    }
+    return elem;
+  }
+  public void llenar(int n) {
+    Scanner lee = new Scanner(System.in);
+    for (int i = 1; i <= n; i++) {
+      System.out.println("Ingresa: ci, edad y edad");
+      int ci = lee.nextInt();
+      String nombre = lee.next();
+      int edad = lee.nextInt();
+
+      Pasajero pasajero = new Pasajero(ci, nombre, edad);
+      this.adi(pasajero);
+    }
+  }
+  public void mostrar() {
+    PilaP aux = new PilaP();
+    while (!esVacia()) {
+      Pasajero elem = this.eli();
+      elem.mostrar();
+      aux.adi(elem);
+    }
+    this.vaciar(aux);
+  }
+  public void vaciar(PilaP aux) {
+    while (!aux.esVacia()) {
+      this.adi(aux.eli());
+    }
+  }
+  public Pasajero nroElem() { return tope + 1; }
+}

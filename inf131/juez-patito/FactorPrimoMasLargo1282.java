@@ -21,7 +21,7 @@ class FactorPrimoMasLargo1282 {
         i++;
         primeFactor = primes.get(i);
       }
-      System.out.println(primeFactors.get(primeFactors.size() - 1));
+      System.out.println(primeFactors.toString());
     }
   }
   public static List<Integer> sieveOfEratosthenes(int start, long n) {

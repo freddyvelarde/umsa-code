@@ -3,7 +3,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Scanner;
 
-public class ContandoPrimos2032 {
+class Main {
   public static void main(String[] args) {
     List<Integer> primes = sieveOfEratosthenes(2, 100000);
     Scanner scanner = new Scanner(System.in);
@@ -20,8 +20,6 @@ public class ContandoPrimos2032 {
   }
 
   static int countAdjacentPrimes(String numStr, List<Integer> primes) {
-
-    /* String numStr = Long.toString(number); */
     int primesCounter = 0;
     int length = numStr.length();
     HashSet<Integer> primesFound = new HashSet<>();

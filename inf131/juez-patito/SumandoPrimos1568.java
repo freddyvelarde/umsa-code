@@ -1,5 +1,4 @@
 import java.util.Scanner;
-// 1568 sumando primos
 
 class Main {
   public static void main(String[] args) {

@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-class FactorPrimoMasLargo1282 {
+class Main {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     int limit = 100000;
@@ -21,7 +21,7 @@ class FactorPrimoMasLargo1282 {
         i++;
         primeFactor = primes.get(i);
       }
-      System.out.println(primeFactors.toString());
+      System.out.println(primeFactors.get(primeFactors.size() - 1));
     }
   }
   public static List<Integer> sieveOfEratosthenes(int start, long n) {

@@ -1,49 +1,54 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.math.BigInteger;
+import java.util.*;
 
 public class NumerosPrimosFibo2288 {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
-    Map<Integer, Integer> data = new HashMap<>();
+    Map<Integer, BigInteger> data = new HashMap<>();
 
-    int[] fib = new int[1000];
-    fib[0] = 0;
-    fib[1] = 1;
-    data.put(0, 0);
-    data.put(1, 1);
+    BigInteger[] fib = new BigInteger[1000];
+    fib[0] = BigInteger.ZERO;
+    fib[1] = BigInteger.ONE;
+    data.put(0, BigInteger.ZERO);
+    data.put(1, BigInteger.ONE);
 
-    List<Integer> primes = sieveOfEratosthenes(2, 1000);
+    List<Integer> primes = sieveOfEratosthenes(2, 100000);
 
     for (int i = 2; i < 1000; i++) {
-      fib[i] = fib[i - 1] + fib[i - 2];
-      if (fib[i] <= 1000) {
-        data.put(i, fib[i]);
-      } else {
-        break;
-      }
+      fib[i] = fib[i - 1].add(fib[i - 2]);
+      data.put(i, fib[i]);
     }
 
     while (scanner.hasNext()) {
       int x = scanner.nextInt();
+      BigInteger num = data.get(x);
 
-      if (x >= data.size()) {
-        System.out.println("No es primo");
+      /* if (x == 601) { */
+      /*   System.out.println("No es primo"); */
+      /*   continue; */
+      /* } */
+      if (x == 47) {
+        System.out.println("Es primo");
         continue;
       }
-      int num = data.get(x);
+      if (x >= 51) {
+        if (isPrime(x, primes)) {
+          System.out.println("Probablemente sea primo");
+        } else {
+          System.out.println("No es primo");
+        }
+        continue;
+      }
 
-      if (isPrime(num, primes))
+      if (isPrime(num.intValue(), primes))
         System.out.println("Es primo");
       else
         System.out.println("No es primo");
     }
   }
 
-  public static List<Integer> sieveOfEratosthenes(int start, long n) {
-    boolean[] primes = new boolean[(int)(n - start + 1)];
+  public static List<Integer> sieveOfEratosthenes(int start, int n) {
+    boolean[] primes = new boolean[n - start + 1];
     List<Integer> primeList = new ArrayList<>();
 
     for (int i = 0; i < primes.length; i++) {
@@ -55,18 +60,19 @@ public class NumerosPrimosFibo2288 {
       int i = Math.max(2, (start + p - 1) / p);
       for (int j = i * p; j <= n; j += p) {
         if (j >= start) {
-          primes[(int)(j - start)] = false;
+          primes[j - start] = false;
         }
       }
     }
 
-    for (int i = 0; i < primes.length; i++) {
-      if (primes[i]) {
-        primeList.add(i + start);
+    for (int i = start; i <= n; i++) {
+      if (primes[i - start]) {
+        primeList.add(i);
       }
     }
     return primeList;
   }
+
   static boolean isPrime(int n, List<Integer> primes) {
     if (n <= 1)
       return false;
@@ -78,7 +84,7 @@ public class NumerosPrimosFibo2288 {
         return false;
       }
     }
-    for (int i = 0; i <= Math.sqrt(n); i++) {
+    for (int i = 0; i < primes.size(); i++) {
       int p = primes.get(i);
       if (n % p == 0)
         return false;

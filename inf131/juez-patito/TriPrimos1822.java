@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class TriPrimos1822 {
+class Main {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
 

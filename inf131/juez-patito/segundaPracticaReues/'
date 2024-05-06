@@ -1,0 +1,25 @@
+import java.util.*;
+public class ReusCadenas1856 {
+  public static void main(String[] args) { solution("hello", "world"); }
+
+  static void solution(String a, String b) {
+    Map<Char, Integer> a_count = new HashMap<>();
+    Map<Char, Integer> b_count = new HashMap<>();
+
+    for (int i = 0; i < a.length(); i++) {
+
+      char c = a.charAt(i);
+
+      System.out.println(c);
+    }
+    for (int i = 0; i < b.length(); i++) {
+      char c = b.charAt(i);
+      if (!b_count.containsKey()) {
+
+      } else {
+        b_count.put(c, 1);
+      }
+      System.out.println(c);
+    }
+  }
+}

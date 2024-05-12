@@ -34,6 +34,12 @@ class Main {
         }
       }
     }
+    public void printSet() {
+
+      for (int i = 0; i < parent.length; i++) {
+        System.out.println(parent[i]);
+      }
+    }
 
     public int countSets() {
       int count = 0;

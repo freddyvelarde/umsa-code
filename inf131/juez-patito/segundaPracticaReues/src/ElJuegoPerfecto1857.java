@@ -1,20 +1,36 @@
 import java.util.*;
+
 class ElJuegoPerfecto1857 {
 
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     int n = scanner.nextInt();
     int a[] = new int[n];
+    int min_value = Integer.MAX_VALUE;
+    int max_value = Integer.MIN_VALUE;
 
     for (int i = 0; i < n; i++) {
-      a[i] = scanner.nextInt();
+      int x = scanner.nextInt();
+
+      a[i] = x;
+      if (x > max_value)
+        max_value = x;
+
+      if (x < min_value)
+        min_value = x;
     }
 
     int m = scanner.nextInt();
     int b[] = new int[m];
 
     for (int i = 0; i < m; i++) {
-      b[i] = scanner.nextInt();
+      int x = scanner.nextInt();
+      b[i] = x;
+      if (x > max_value)
+        max_value = x;
+
+      if (x < min_value)
+        min_value = x;
     }
 
     Arrays.sort(a);
@@ -25,24 +41,12 @@ class ElJuegoPerfecto1857 {
     int b_min = b[0];
     int b_max = b[b.length - 1];
 
-    int distances[] = null;
-    if (b_max >= a_max) {
-      if (b_min <= a_min) {
-        distances = generateDistanceLiwst(b_min - 1, b_max);
-      } else {
-        distances = generateDistanceLiwst(a_min - 1, b_max);
-      }
-    } else {
-      if (b_min <= a_min) {
-        distances = generateDistanceLiwst(b_min - 1, a_max);
-      } else {
-        distances = generateDistanceLiwst(a_min - 1, a_max);
-      }
-    }
+    int distances[] = generateDistanceLiwst(min_value - 1, max_value);
 
     Long max = Long.MIN_VALUE;
     String res = "";
 
+    /* int max_value_a = 0; */
     for (int d : distances) {
       int res_a = 0;
       if (d < a_min) {
@@ -61,13 +65,10 @@ class ElJuegoPerfecto1857 {
         res_b = calculationMiddle(b, d);
       }
       long diff = res_a - res_b;
+
       if (diff > max) {
         max = diff;
 
-        if (n == 100000) {
-          res_a = 254943;
-          res_b = 254221;
-        }
         res = res_a + ":" + res_b;
       }
     }
@@ -75,7 +76,8 @@ class ElJuegoPerfecto1857 {
   }
 
   static int calculationMiddle(int nums[], int x) {
-    int indexMid = bs(nums, 0, nums.length - 1, x);
+    /* int indexMid = bs(nums, 0, nums.length - 1, x); */
+    int indexMid = bs(nums, x);
     int res = 0;
 
     if (indexMid == -1) {
@@ -111,18 +113,24 @@ class ElJuegoPerfecto1857 {
     }
     return res;
   }
+  static int bs(int[] arr, int target) {
+    int start = 0;
+    int end = arr.length - 1;
+    int res = -1;
 
-  static int bs(int n[], int left, int right, int target) {
-    if (left > right) {
-      return -1;
+    while (start <= end) {
+      int mid = start + (end - start) / 2;
+
+      if (arr[mid] == target) {
+        res = mid;
+        start = mid + 1;
+      } else if (arr[mid] < target) {
+        start = mid + 1;
+      } else {
+        end = mid - 1;
+      }
     }
-    int middle = right + (left - right) / 2;
-    if (n[middle] == target) {
-      return middle;
-    }
-    if (n[middle] < target) {
-      return bs(n, middle + 1, right, target);
-    }
-    return bs(n, left, middle - 1, target);
+
+    return res;
   }
 }

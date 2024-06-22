@@ -1,0 +1,4 @@
+Requerimientos:
+
+-	lista, crear, actualizar y eliminar Boletos.
+-	lista, crear, actualizar y eliminar Salas.

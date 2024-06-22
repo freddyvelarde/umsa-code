@@ -1,0 +1,43 @@
+{% extends "plantilla.html" %}
+
+{% block title %}Boletos{% endblock %}
+
+{% block body %}
+<div class="container">
+  <h2 class="mt-5">Agregar nuevo boleto</h2>
+  <form action="/boletos/crear" method="POST">
+    <div class="form-group">
+      <label for="pelicula">Película:</label>
+      <input type="text" class="form-control" id="pelicula" name="pelicula" required>
+    </div>
+
+    <div class="form-group">
+      <label for="precio">Precio:</label>
+      <input type="text" class="form-control" id="precio" name="precio" required>
+    </div>
+
+    <div class="form-group">
+      <label for="nro_asiento">Nro Asiento:</label>
+      <input type="number" class="form-control" id="nro_asiento" name="nro_asiento" required>
+    </div>
+
+    <div class="form-group">
+      <label for="id_sala">ID Sala:</label>
+      <input type="number" class="form-control" id="id_sala" name="id_sala">
+    </div>
+
+    <div class="form-group">
+      <label for="fecha">Fecha:</label>
+      <input type="date" class="form-control" id="fecha" name="fecha" required>
+    </div>
+
+    <div class="form-group">
+      <label for="hora">Hora:</label>
+      <input type="time" class="form-control" id="hora" name="hora" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Agregar</button>
+  </form>
+</div>
+{% endblock %}
+

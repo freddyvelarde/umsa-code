@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Salas</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Additional styles specific to this page */
+      /* You can keep your existing CSS styles here */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px; /* Example of additional CSS specific to this page */
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 10px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="mt-5">Lista de Salas</h1>
+      <table class="table table-bordered table-hover mt-3">
+        <thead class="thead-light">
+          <tr>
+            <th>ID</th>
+            <th>CAPACIDAD</th>
+            <th>NOMBRE DE SALA</th>
+            <th>TIPO DE PANTALLA</th>
+            <th>Operaciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for sala in salas %}
+          <tr>
+            <td>{{ sala.id }}</td>
+            <td>{{ sala.capacidad }}</td>
+            <td>{{ sala.nombre_sala }}</td>
+            <td>{{ sala.tipo_pantalla }}</td>
+            <td>
+              <a
+                href="/salas/eliminar/{{ sala.id }}"
+                class="btn btn-danger btn-sm"
+                target="_blank"
+                >Eliminar</a
+              >
+              <a
+                href="/salas/actualizar/{{ sala.id }}"
+                class="btn btn-primary btn-sm ml-1"
+                >Actualizar</a
+              >
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Bootstrap JS and dependencies (if needed) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
